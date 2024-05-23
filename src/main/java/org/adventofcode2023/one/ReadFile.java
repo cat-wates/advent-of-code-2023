@@ -1,4 +1,4 @@
-package org.adventofcode.one;
+package org.adventofcode2023.one;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package org.adventofcode.one;
+package org.adventofcode2023.one;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String filePath = "fullList.txt"; //define file as variable
         ArrayList<String> calibrationValues = ReadFile.readFile(filePath); //read file into readFile method - assigned as calibrationValues
-        Calibrations extract = new Calibrations(calibrationValues); //instance of Calibrations with cV fed in
+        StringNumbers string = new StringNumbers();
+        ArrayList<String> convertedCalibrationValues = string.convertStringToNumber(calibrationValues);
+        Calibrations extract = new Calibrations(convertedCalibrationValues); //instance of Calibrations with cV fed in
         extract.setDigitList(); //uses cV in Calibrations class to run method
         ArrayList<Integer> finalDigitList = extract.findCorrectDigits();
         Calculator calc = new Calculator();
