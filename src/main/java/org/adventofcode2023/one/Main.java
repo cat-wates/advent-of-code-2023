@@ -8,7 +8,8 @@ public class Main {
         String filePath = "fullList.txt"; //define file as variable
         ArrayList<String> calibrationValues = ReadFile.readFile(filePath); //read file into readFile method - assigned as calibrationValues
         StringNumbers string = new StringNumbers();
-        ArrayList<String> convertedCalibrationValues = string.convertStringToNumber(calibrationValues);
+        ArrayList<String> paddedCalibrationValues = string.addPaddingToStringNumbers(calibrationValues);
+        ArrayList<String> convertedCalibrationValues = string.convertStringToNumber(paddedCalibrationValues);
         Calibrations extract = new Calibrations(convertedCalibrationValues); //instance of Calibrations with cV fed in
         extract.setDigitList(); //uses cV in Calibrations class to run method
         ArrayList<Integer> finalDigitList = extract.findCorrectDigits();
